@@ -16,44 +16,48 @@
     <div class="star-wars-contain">
         <h1>Star<br>Wars<br>RPG!</h1>
 
-        <div class="game">
-            <section class="character-choose">
-                <h2>Choose your character, then choose an enemy to attack!</h2>
+        <section class="character-choose">
+            <h2>Choose your character, then choose an enemy to attack!</h2>
 
-                <div class="fighter" id="darthtaniel">
-                    <img src="./assets/darthtaniel.jpg" alt="">
-                    <p>Darth<br>taniel</p>
+            <div class="fighter" id="darthtaniel">
+                <img src="./assets/darthtaniel.jpg" alt="">
+                <p>Darth<br>taniel</p>
+                <div class="health-bar"></div>
+            </div>
+
+            <div class="fighter" id="scootwalker">
+                <img src="./assets/scootwalker.jpg" alt="">
+                <p>Scoot<br>walker</p>
+                <div class="health-bar"></div>
+            </div>
+
+            <div class="fighter" id="tammyrey">
+                <img src="./assets/tammyrey.jpg" alt="">
+                <p>Tammy-Rey</p>
+                <div class="health-bar"></div>
+            </div>
+
+            <div class="fighter" id="oliviyoda">
+                    <img src="./assets/oliviyoda.jpg" alt="">
+                    <p>Olivi-yoda</p>
                     <div class="health-bar"></div>
                 </div>
+        </section>
 
-                <div class="fighter" id="scootwalker">
-                    <img src="./assets/scootwalker.jpg" alt="">
-                    <p>Scoot<br>walker</p>
-                    <div class="health-bar"></div>
-                </div>
+        <section class="character-fight">
+            <div id="user-fighter">
+                <h2>Your character:</h2>
+            </div>
+            
+            <div id="computer-fighter">
+                <h2>Your enemy:</h2>
+            </div>
 
-                <div class="fighter" id="tammyrey">
-                    <img src="./assets/tammyrey.jpg" alt="">
-                    <p>Tammy-Rey</p>
-                    <div class="health-bar"></div>
-                </div>
-            </section>
-
-            <section class="character-fight">
-                <div id="user-fighter">
-                    <h2>Your character:</h2>
-                </div>
-                
-                <div id="computer-fighter">
-                    <h2>Your enemy:</h2>
-                </div>
-
-                <div class="controls">
-                    <button id="fight">FIGHT!</button>
-                    <button id="reset">RESET</button>
-                </div>
-            </section>
-        </div>
+            <div class="controls">
+                <button id="fight">FIGHT!</button>
+                <button id="reset">RESET</button>
+            </div>
+        </section>
         
     </div>
 

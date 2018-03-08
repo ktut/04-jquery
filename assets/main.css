@@ -6,7 +6,6 @@
 .star-wars-contain {
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
 
@@ -16,8 +15,8 @@
 }
 
 .star-wars-contain h1 {
-    /* position: absolute;
-    width: 100%; */
+    position: absolute;
+    width: 100%;
     text-align: center;
     color: white;
     font-size: 3.5rem;
@@ -30,18 +29,12 @@ section h2 {
     margin-bottom: 15px;
 }
 
-.game {
-    display: flex;
-    justify-content: center;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
 section {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 
+    width: 300px;
     padding: 25px;
     margin: 15px;
     background: rgba(0,0,0,0.8);
@@ -52,6 +45,10 @@ section.character-fight #user-fighter,
 section.character-fight #computer-fighter {
     padding: 10px;
     flex-basis: 45%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .controls button {
@@ -71,9 +68,9 @@ section.character-fight #computer-fighter {
 }
 
 .fighter {
-    width: 150px;
-    height: 252px;
-    padding: 15px;    
+    width: 120px;
+    height: 213px;
+    padding: 10px;    
     background: rgba(255,255,255,0.3);
     transition: all 0.3s;
 }
@@ -88,6 +85,7 @@ section.character-fight #computer-fighter {
 }
 
 .fighter p {
+    font-size: 0.9rem;
     text-align: center;
     text-transform: uppercase;
     margin: 10px auto;
@@ -99,9 +97,20 @@ section.character-fight #computer-fighter {
     height: 10px;
 }
 
-@media screen and (max-width: 767px) {
-    .game {
+@media screen and (max-width: 920px) {
+    .star-wars-contain {
         display: block;
+    }
+    .star-wars-contain h1 {
+        position: relative;
+    }
+    section {
+        width: auto;
+    }
+
+    section > h2 {
+        text-align: center;
+        width: 100%;
     }
 }
 
