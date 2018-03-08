@@ -43,6 +43,7 @@ $(document).ready(function() {
         scoot.health = 100;
         tammy.health = 100;
         olivia.health = 100;
+        $(".health-bar").css('width', "100%");
 
         $(".character-choose").append(darth.div);
         $(".character-choose").append(scoot.div);
@@ -79,14 +80,14 @@ $(document).ready(function() {
             // use object's multiplier to determine damage
             darth.health = darth.health - (Math.random() * scoot.multiplier);
 
-
+            // if no health, lose game, otherwise, consolelog health, make health bar smaller and color relative to current health
             if (darth.health < 0) {
                 alert("You lose!");
                 resetGame();
-            } else if (darth.health < 50) {
-                console.log("new darth health: " + darth.health);
             } else {
                 console.log("new darth health: " + darth.health);
+                darth.div.children(".health-bar").css('width', darth.health + "%");
+                // darth.div.children(".health-bar").css('background', "rgb(" + ((100 - darth.health) / 100 * 255) + "," + (darth.health / 100 * 255) + ",0)");
             }
         }
     });

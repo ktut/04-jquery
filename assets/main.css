@@ -11,7 +11,7 @@
 
     background-image: url("./mustafar.jpg");
     background-size: cover;
-    background-position: 75% 50%;
+    background-position: 90% 50%;
 }
 
 .star-wars-contain h1 {
@@ -95,6 +95,7 @@ section.character-fight #computer-fighter {
     width: 100%;
     background: rgb(0,255,0);
     height: 10px;
+    transition: all 1s;
 }
 
 @media screen and (max-width: 920px) {
