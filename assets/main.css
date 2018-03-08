@@ -1,0 +1,71 @@
+* {
+    font-family: 'Press Start 2P', cursive !important;
+    box-sizing: border-box;
+}
+
+.star-wars-contain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    background-image: url("./mustafar.jpg");
+    background-size: cover;
+    background-position: 75% 50%;
+}
+
+.star-wars-contain h1 {
+    text-align: center;
+    color: white;
+    font-size: 4rem;
+    padding: 25px;
+}
+
+section h2 {
+    font-size: 0.9rem;
+    line-height: 150%;
+    margin-bottom: 15px;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    margin: 15px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+}
+
+.fighter {
+    margin-right: 10px;
+    width: 150px;
+    padding: 15px;    background: rgba(255,255,255,0.3);
+}
+
+.fighter img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fighter p {
+    font-size: 0.7rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 767px) {
+    .game {
+        display: block;
+    }
+}
+
+
