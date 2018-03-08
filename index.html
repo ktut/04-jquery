@@ -7,37 +7,47 @@
     <title>Star Wars Game</title>
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    
 </head>
 <body>
     <div class="star-wars-contain">
         <h1>Star Wars RPG!</h1>
 
         <div class="game">
-            <section id="character-choose">
+            <section class="character-choose">
                 <h2>Choose your character, then choose an enemy to attack!</h2>
 
                 <div class="fighter" id="darthtaniel">
                     <img src="./assets/darthtaniel.jpg" alt="">
-                    <p>Darthtaniel</p>
+                    <p>Darth<br>taniel</p>
+                    <div class="health-bar"></div>
                 </div>
 
-                <div class="fighter" id="darthtaniel">
-
+                <div class="fighter" id="scootwalker">
+                    <img src="./assets/scootwalker.jpg" alt="">
+                    <p>Scoot<br>walker</p>
+                    <div class="health-bar"></div>
                 </div>
 
-                <div class="fighter" id="darthtaniel">
-
+                <div class="fighter" id="tammyrey">
+                    <img src="./assets/tammyrey.jpg" alt="">
+                    <p>Tammy-Rey</p>
+                    <div class="health-bar"></div>
                 </div>
             </section>
 
-            <section id="user-choice">
-                <h2>Your character!</h2>
-            </section>
+            <section class="character-fight">
+                <div id="user-fighter">
+                    <h2>Your character:</h2>
+                </div>
 
-            <section id="computer-choice">
-                <h2>Your enemy!</h2>
+                
+                <div id="computer-fighter">
+                    <h2>Your enemy:</h2>
+                </div>
             </section>
         </div>
         

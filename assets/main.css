@@ -18,7 +18,7 @@
 .star-wars-contain h1 {
     text-align: center;
     color: white;
-    font-size: 4rem;
+    font-size: 3.5rem;
     padding: 25px;
 }
 
@@ -37,30 +37,48 @@ section h2 {
 
 section {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
     padding: 25px;
     margin: 15px;
     background: rgba(0,0,0,0.8);
     color: white;
 }
 
+section.character-choose {
+    flex-wrap: wrap;
+}
+
+section.character-fight > div {
+    padding: 10px;
+}
+
 .fighter {
-    margin-right: 10px;
     width: 150px;
-    padding: 15px;    background: rgba(255,255,255,0.3);
+    padding: 15px;    
+    background: rgba(255,255,255,0.3);
+    transition: all 0.3s;
+}
+
+.fighter:hover {
+    transform: translate(3px, 3px);
+    cursor: pointer;
 }
 
 .fighter img {
     width: 100%;
-    margin-bottom: 10px;
 }
 
 .fighter p {
-    font-size: 0.7rem;
     text-align: center;
     text-transform: uppercase;
+    margin: 10px auto;
 }
 
+.fighter .health-bar {
+    width: 100%;
+    background: rgb(0,255,0);
+    height: 10px;
+}
 
 @media screen and (max-width: 767px) {
     .game {
