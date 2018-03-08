@@ -40,18 +40,29 @@ $(document).ready(function() {
     function resetGame() {
         isFirstCharChosen = false;
         isSecondCharChosen = false;
-        $(".character-choose").append(".fighter");
+        $(".character-choose").append(darthDiv);
+        $(".character-choose").append(scootDiv);
+        $(".character-choose").append(tammyDiv);
     }
 
+    $("#reset").on( "click", function() {
+        resetGame();
+    }); 
+
+    
+
+    // onplace the fighters in their positions
     $(".character-choose > .fighter").on( "click", function() {
-        if (isFirstCharChosen === false) {
+        if ((isFirstCharChosen === false) && (isSecondCharChosen === false)) {
             $("#user-fighter").append(this);
             isFirstCharChosen = true;
-        } else {
+        } else if ((isFirstCharChosen === true) && (isSecondCharChosen === false)) {
             $("#computer-fighter").append(this);
             isSecondCharChosen = true;
         }
     });
 
+
+    
 
 });
