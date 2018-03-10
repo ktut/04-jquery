@@ -14,32 +14,37 @@
 </head>
 <body>
     <div class="star-wars-contain">
+
+        <video autoplay muted loop id="myVideo">
+            <source src="./assets/mustafar.mp4" type="video/mp4">
+        </video>
+
         <h1>Star<br>Wars<br>RPG!</h1>
 
         <section class="character-choose">
             <h2>Choose your character, then choose an enemy to attack!</h2>
 
-            <div class="fighter" id="darthtaniel">
+            <div class="fighter" id="darthtaniel" data-value="darth">
                 <img src="./assets/darthtaniel.jpg" alt="">
                 <p>Darth<br>taniel</p>
                 <div class="health-bar"></div>
             </div>
 
-            <div class="fighter" id="scootwalker">
+            <div class="fighter" id="scootwalker" data-value="scoot">
                 <img src="./assets/scootwalker.jpg" alt="">
                 <p>Scoot<br>walker</p>
                 <div class="health-bar"></div>
             </div>
 
-            <div class="fighter" id="tammyrey">
+            <div class="fighter" id="tammyrey" data-value="tammy">
                 <img src="./assets/tammyrey.jpg" alt="">
                 <p>Tammy-Rey</p>
                 <div class="health-bar"></div>
             </div>
 
-            <div class="fighter" id="oliviyoda">
-                    <img src="./assets/oliviyoda.jpg" alt="">
-                    <p>Olivi-yoda</p>
+            <div class="fighter" id="kylorich" data-value="rich">
+                    <img src="./assets/kylo-rich.jpg" alt="">
+                    <p>Kylo<br>Rich</p>
                     <div class="health-bar"></div>
                 </div>
         </section>
