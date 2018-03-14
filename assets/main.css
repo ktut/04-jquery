@@ -50,11 +50,13 @@ section h2 {
 }
 
 section {
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 
     width: 300px;
+    min-height: 300px;
     padding: 25px;
     margin: 15px;
     background: rgba(0,0,0,0.8);
@@ -71,6 +73,10 @@ section.character-fight #computer-fighter {
     flex-direction: column;
 }
 
+.controls {
+    display: none;
+}
+
 .controls button {
     padding: 10px;
 }
@@ -80,12 +86,24 @@ section.character-fight #computer-fighter {
 }
 
 .controls button#fight {
-    background: red;
+    background :#B20000;
+}
+
+.controls button#fight.glow {
+    animation: glowing 1500ms infinite;
 }
 
 .controls button#reset {
     background: #ddd;
 }
+
+@keyframes glowing {
+    0% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+    50% { background-color: #FF0000; box-shadow: 0 0 60px #FF0000; }
+    100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
+  }
+
+
 
 .fighter {
     width: 120px;
@@ -103,7 +121,8 @@ section.character-fight #computer-fighter {
     background: rgba(255,0,0,0.3);
 }
 
-.fighter:hover {
+/* only show hover effect for fighters who aren't selected */
+.fighter:hover:not(.good):not(.bad) {
     transform: translate(3px, 3px);
     cursor: pointer;
 }
@@ -149,6 +168,14 @@ section.character-fight #computer-fighter {
     section > h2 {
         text-align: center;
         width: 100%;
+    }
+
+    .character-fight {
+        justify-content: center;
+    }
+
+    .controls {
+        margin-top: 20px;
     }
 }
 
