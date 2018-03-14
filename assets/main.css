@@ -92,7 +92,15 @@ section.character-fight #computer-fighter {
     height: 219px;
     padding: 10px;    
     background: rgba(255,255,255,0.3);
-    transition: all 0.3s;
+    transition: transform 0.3s, background 3s;
+}
+
+.fighter.good {
+    background: rgba(0,255,0,0.3);
+}
+
+.fighter.bad {
+    background: rgba(255,0,0,0.3);
 }
 
 .fighter:hover {
@@ -117,6 +125,14 @@ section.character-fight #computer-fighter {
     background: rgb(0,255,0);
     height: 10px;
     transition: all 1s;
+}
+
+/* a hidden div to hold the defeated fighters */
+#defeated {
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
 }
 
 @media screen and (max-width: 920px) {
