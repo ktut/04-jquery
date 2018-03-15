@@ -67,6 +67,7 @@ $(document).ready(function() {
 
         // place all the fighters back and reset their classes
         $( ".fighter" ).each(function() {
+            $(this).show();
             $(".character-choose").append(this);
             $(this).removeClass("good").removeClass("bad").removeClass("defeated");
         });
@@ -125,23 +126,25 @@ $(document).ready(function() {
             if ( $(".character-choose .fighter").length ) {
 
                 // do some cool animation..? can't figure out how to stall the code here to do this.
+                jedi2.div.fadeOut('slow', function () {
+                    console.log('animation finished');
+                    // place defeated enemy jedi in defeated div
+                    $("#defeated").append(jedi2.div);
+                    // take the first remaining jedi and move it to combat div
+                    $("#computer-fighter").append($(".character-choose .fighter:first-of-type"));
+                    // get the correct new enemy jedi object, place it in computerJedi
+                    computerJedi = objectHolder[$("#computer-fighter .fighter").attr("data-value")];
+                    // make new enemy background red
+                    $("#computer-fighter .fighter").addClass("bad");
 
-                // place defeated enemy jedi in defeated div
-                $("#defeated").append(jedi2.div);
-                // take the first remaining jedi and move it to combat div
-                $("#computer-fighter").append($(".character-choose .fighter:first-of-type"));
-                // get the correct new enemy jedi object, place it in computerJedi
-                computerJedi = objectHolder[$("#computer-fighter .fighter").attr("data-value")];
-                // make new enemy background red
-                $("#computer-fighter .fighter").addClass("bad");
+                    // restore user Jedi health, update health bar width and color. Since rgba() apparently does not accept values with more than 1-2 decimal places, Math.floor() was needed. this was especially annoying to figure out
+                    jedi1.health = 100;
+                    jedi1.div.children(".health-bar").css('width', jedi1.health + "%").css('background', "rgb("+ Math.floor(((100 - jedi1.health) / 100) * 255) +","+ Math.floor((jedi1.health / 100) * 255) +","+ 0 +")" );
 
-                // restore user Jedi health, update health bar width and color. Since rgba() apparently does not accept values with more than 1-2 decimal places, Math.floor() was needed. this was especially annoying to figure out
-                jedi1.health = 100;
-                jedi1.div.children(".health-bar").css('width', jedi1.health + "%").css('background', "rgb("+ Math.floor(((100 - jedi1.health) / 100) * 255) +","+ Math.floor((jedi1.health / 100) * 255) +","+ 0 +")" );
-
-                // give the user Jedi slightly more attack power as a reward. Since initial jedi power is between 10 and 20, this needed to increase by at least 1 to give the user a chance. increasing this makes the game easier to win overall
-                jedi1.power = jedi1.power + 1.5;
-                console.log("new " + jedi1.name + " power: " + jedi1.power);
+                    // give the user Jedi slightly more attack power as a reward. Since initial jedi power is between 10 and 20, this needed to increase by at least 1 to give the user a chance. increasing this makes the game easier to win overall
+                    jedi1.power = jedi1.power + 1.5;
+                    console.log("new " + jedi1.name + " power: " + jedi1.power);
+                });
 
             // if there are no fighters left, announce victory!
             } else {
